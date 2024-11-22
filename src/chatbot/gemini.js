@@ -4,9 +4,7 @@ const showdown = require("showdown");
 
 dotenv.config();
 
-const genAI = new GoogleGenerativeAI(
-  (process.env.GEMINI_API_KEY = "AIzaSyB-DQbOnv9BroDVQ3C1xhzg-eEdSGe54xI")
-);
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const generateChatResponse = async (prompt) => {
   try {

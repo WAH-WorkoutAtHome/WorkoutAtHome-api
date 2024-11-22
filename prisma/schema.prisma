@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model videos {
+  id_videos String        @id @db.VarChar(12)
+  genre     videos_genre?
+  video_url String?       @db.VarChar(100)
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model user {
+  id_user      String  @id @db.VarChar(10)
+  nama_lengkap String? @db.VarChar(100)
+  no_telp      String? @db.VarChar(20)
+  username     String? @db.VarChar(50)
+  email        String? @db.VarChar(50)
+  password     String? @db.VarChar(50)
+
+  @@ignore
+}
+
+enum videos_genre {
+  upper_body @map("upper body")
+  lower_body @map("lower body")
+  cardio
+}

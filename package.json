@@ -14,12 +14,14 @@
     "@hapi/bell": "^13.0.2",
     "@hapi/hapi": "^21.3.12",
     "@hapi/joi": "^17.1.1",
+    "@prisma/client": "^5.22.0",
     "dotenv": "^16.4.5",
     "googleapis": "^144.0.0",
     "showdown": "^2.1.0"
   },
   "devDependencies": {
     "eslint": "^9.15.0",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "prisma": "^5.22.0"
   }
 }
