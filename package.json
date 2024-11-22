@@ -1,0 +1,25 @@
+{
+  "name": "workoutathome-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:auth": "node src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@hapi/bell": "^13.0.2",
+    "@hapi/hapi": "^21.3.12",
+    "@hapi/joi": "^17.1.1",
+    "dotenv": "^16.4.5",
+    "googleapis": "^144.0.0",
+    "showdown": "^2.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.15.0",
+    "nodemon": "^3.1.7"
+  }
+}
