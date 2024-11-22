@@ -1,7 +1,3 @@
-Berikut adalah contoh file `README.md` untuk dokumentasi penggunaan API Anda:
-
----
-
 # **WorkoutAtHome API Documentation**
 
 ## **Overview**
