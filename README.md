@@ -125,16 +125,4 @@ npm start
 }
 ```
 
----
-
-## **Contact**
-
-Jika Anda memiliki pertanyaan atau masalah, silakan hubungi:
-
-- **Developer**: [Nama Anda]
-- **Email**: [Email Anda]
-- **GitHub**: [GitHub Repo Anda]
-
----
-
 Selamat menggunakan API WorkoutAtHome! 🚀
