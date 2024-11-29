@@ -20,7 +20,7 @@ const calculateCalories = async (weight, activityLevel, dietGoal) => {
     "turunkan berat badan": -500,
     "naikkan berat badan": 500,
     "menaikkan masa otot": 300,
-    "mempertahankan berat badan": 0,
+    "mempertahankan berat badan": 1,
   };
 
   // Validasi input
@@ -48,7 +48,8 @@ const calculateCalories = async (weight, activityLevel, dietGoal) => {
     - Protein harian: ${Math.round(dailyProtein)} gram
     - Gula harian: ${Math.round(sugarTolerance)} gram
     Tolong buatkan rekomendasi makanan harian yang mencakup sarapan, makan siang, dan makan malam, 
-    dengan proporsi yang sesuai untuk kebutuhan kalori, protein, dan gula ini.
+    dengan proporsi yang sesuai untuk kebutuhan kalori, protein, dan gula ini. Buatlah secara singkat dan jelas.
+    buatlah dalam bahasa html, mulai dari <h1> sampai <p>. biar rapi dan tidak boleh ada <h2>. ingat bahwa makanan harus yang sederhana dan mudah didapat.
   `;
 
   // Interaksi dengan Gemini
