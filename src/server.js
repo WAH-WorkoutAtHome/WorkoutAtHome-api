@@ -3,6 +3,7 @@ const Hapi = require("@hapi/hapi");
 const configureGoogleAuth = require("./auth/googleAuth");
 const googleAuthRoutes = require("./auth/routes");
 const chatBotRoutes = require("./chatbot/routes");
+const calendarRoutes = require("./calendar/routes");
 const calorieCalculatorRoutes = require("./calculator-calories/routes");
 
 const init = async () => {
@@ -27,6 +28,9 @@ const init = async () => {
 
   // Tambahkan rute kalkulator kalori
   server.route(calorieCalculatorRoutes);
+
+  // Tambahkan rute kalender
+  server.route(calendarRoutes);
 
   // Jalankan server
   await server.start();

@@ -1,0 +1,83 @@
+=====================================================================================================================
+weight_loss: [
+    {
+      day: 1,
+      title: "Upper Body & Cardio",
+      activities: ["Push Up 20 reps 3 sets", "Skipping 3 minutes 3 sets"],
+    },
+    {
+      day: 2,
+      title: "Lower Body",
+      activities: ["Squats 15 reps 3 sets", "Lunges 20 reps 3 sets"],
+    },
+    {
+      day: 3,
+      title: "Full Body & Stretch",
+      activities: ["Burpees 15 reps 3 sets", "Stretching 10 minutes"],
+    },
+    {
+      day: 4,
+      title: "Cardio Only",
+      activities: ["Jogging 20 minutes", "Jumping Jacks 3 minutes 3 sets"],
+    },
+    {
+      day: 5,
+      title: "Rest Day",
+      activities: ["Light Walking", "Stretching"],
+    },
+    {
+      day: 6,
+      title: "HIIT Training",
+      activities: [
+        "Mountain Climbers 30 seconds",
+        "Sprint Intervals 5 minutes",
+      ],
+    },
+    {
+      day: 7,
+      title: "Yoga & Core",
+      activities: ["Yoga Session 20 minutes", "Plank 1 minute 3 sets"],
+    },
+  ],
+=====================================================================================================================
+  muscle_building: [
+    {
+      day: 1,
+      title: "Chest & Back",
+      activities: ["Bench Press 12 reps 4 sets", "Pull Ups 10 reps 3 sets"],
+    },
+    {
+      day: 2,
+      title: "Leg Day",
+      activities: ["Deadlift 10 reps 4 sets", "Leg Press 12 reps 3 sets"],
+    },
+    {
+      day: 3,
+      title: "Core & Abs",
+      activities: ["Plank 1 minute 3 sets", "Sit Ups 15 reps 3 sets"],
+    },
+    {
+      day: 4,
+      title: "Cardio & Recovery",
+      activities: ["Cycling 30 minutes", "Foam Rolling 10 minutes"],
+    },
+    {
+      day: 5,
+      title: "Shoulders & Arms",
+      activities: [
+        "Shoulder Press 12 reps 3 sets",
+        "Bicep Curls 12 reps 3 sets",
+      ],
+    },
+    {
+      day: 6,
+      title: "Rest Day",
+      activities: ["Stretching", "Meditation 10 minutes"],
+    },
+    {
+      day: 7,
+      title: "Full Body Strength",
+      activities: ["Squat 12 reps 3 sets", "Push Press 10 reps 3 sets"],
+    },
+    =====================================================================================================================
+    
