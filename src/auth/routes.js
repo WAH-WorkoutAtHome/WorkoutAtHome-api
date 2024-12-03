@@ -21,7 +21,7 @@ const googleAuthRoutes = [
 
         // Redirect to frontend with token and profile data
         return h.redirect(
-          `http://localhost:8000?token=${request.auth.credentials.token}&profile=${profileData}`
+          `${process.env.APP_URL}?token=${request.auth.credentials.token}&profile=${profileData}`
         );
       },
     },

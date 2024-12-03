@@ -27,7 +27,7 @@ const routes = [
 
         // Redirect to frontend with the access token in the URL hash
         return h.redirect(
-          `http://localhost:8000/#/kalendar?access_token=${tokens.access_token}`
+          `${process.env.APP_URL}#/kalendar?access_token=${tokens.access_token}`
         );
       } catch (err) {
         console.error("Error in /calendar/oauth2callback:", err.message);
