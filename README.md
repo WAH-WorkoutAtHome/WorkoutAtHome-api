@@ -191,8 +191,4 @@ Semua endpoint API akan mengembalikan respons dengan format berikut jika terjadi
   "message": "Deskripsi kesalahan"
 }
 ```
-
----
-
 **Selamat menggunakan API WorkoutAtHome! 🚀**
-```
