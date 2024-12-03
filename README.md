@@ -1,21 +1,148 @@
-### **WorkoutAtHome API Documentation**
+## **WorkoutAtHome API Documentation**
 
 ## **Overview**
-
-WorkoutAtHome API menyediakan berbagai layanan untuk mendukung aplikasi kesehatan Anda, termasuk Chatbot, autentikasi Google OAuth, dan kalkulator kalori. API ini dirancang untuk mudah digunakan oleh pengembang frontend.
+WorkoutAtHome API menyediakan berbagai layanan untuk mendukung aplikasi kesehatan Anda, termasuk Chatbot, autentikasi Google OAuth, kalkulator kalori, dan pengelolaan kalender. API ini dirancang untuk mudah digunakan oleh pengembang frontend.
 
 ---
 
 ## **API Endpoints**
 
-### 1. **Gemini Chatbot**
+### 1. **Google OAuth**
+- **URL**: `http://localhost:3000/auth/google`
+- **Method**: `GET`
+- **Description**: Endpoint untuk autentikasi menggunakan akun Google. Setelah pengguna masuk, Anda akan menerima token autentikasi untuk keperluan API selanjutnya.
 
-- **URL**: `http://localhost:3000/chatbot`
+#### **Usage**
+1. Arahkan pengguna ke URL ini untuk login Google.
+2. Setelah login, pengguna akan diarahkan kembali ke aplikasi Anda dengan token akses.
+
+#### **Response Example**
+```json
+{
+  "status": "success",
+  "data": {
+    "token": "your_access_token",
+    "profile": {
+      "name": "User Name",
+      "email": "user@example.com"
+    }
+  }
+}
+```
+
+---
+
+### 2. **Calculator Calories**
+- **URL**: `http://localhost:3000/calculator/calories`
 - **Method**: `POST`
-- **Description**: Endpoint untuk berinteraksi dengan Chatbot Gemini, yang dapat memberikan jawaban dan saran yang relevan sesuai kebutuhan pengguna.
+- **Description**: Endpoint untuk menghitung kebutuhan kalori, protein, dan gula harian berdasarkan berat badan, tingkat aktivitas, dan tujuan diet pengguna. Hasilnya juga disertai rekomendasi makanan yang dihasilkan oleh Gemini AI.
+
+#### **Request Parameters**
+| Parameter     | Type   | Description                                                                 |
+|---------------|--------|-----------------------------------------------------------------------------|
+| `weight`      | Number | Berat badan pengguna dalam kilogram.                                       |
+| `activityLevel` | String | Tingkat aktivitas: ringan, sedang, berat, atlet.                         |
+| `dietGoal`    | String | Tujuan diet: turunkan berat badan, naikkan berat badan, menaikkan masa otot, mempertahankan berat badan. |
 
 #### **Request Example**
+```json
+{
+  "weight": 70,
+  "activityLevel": "sedang",
+  "dietGoal": "menaikkan masa otot"
+}
+```
 
+#### **Response Example**
+```json
+{
+  "status": "success",
+  "data": {
+    "calories": 2450,
+    "protein": 112,
+    "sugar": 61,
+    "foodRecommendations": "Sarapan: Oatmeal dengan pisang dan madu..."
+  }
+}
+```
+
+---
+
+### 3. **Calendar Management**
+
+#### **a. Generate Calendar**
+- **URL**: `http://localhost:3000/calendar/generate`
+- **Method**: `POST`
+- **Description**: Endpoint untuk menghasilkan jadwal latihan selama 7 hari berdasarkan target dan tanggal mulai. Jadwal ini akan ditambahkan ke Google Calendar dan Google Tasks.
+
+#### **Request Parameters**
+| Parameter     | Type   | Description                                                                 |
+|---------------|--------|-----------------------------------------------------------------------------|
+| `target`      | String | Target latihan: weight_loss, core_strength, muscle_building, maintenance.  |
+| `startDate`   | String | Tanggal mulai dalam format YYYY-MM-DD.                                      |
+| `googleAuth`  | Object | Token autentikasi Google yang didapat dari proses login OAuth.              |
+
+#### **Request Example**
+```json
+{
+  "target": "weight_loss",
+  "startDate": "2023-10-01",
+  "googleAuth": {
+    "access_token": "your_access_token"
+  }
+}
+```
+
+#### **Response Example**
+```json
+{
+  "message": "Schedule created and added to Google Calendar and Tasks",
+  "schedule": [
+    {
+      "date": "2023-10-01",
+      "title": "Upper Body & Cardio",
+      "activities": ["Push-ups", "Running"]
+    }
+  ],
+  "googleCalendarResponse": { ... },
+  "googleTasksResponse": { ... }
+}
+```
+
+#### **b. List Events**
+- **URL**: `http://localhost:3000/calendar/events`
+- **Method**: `GET`
+- **Description**: Endpoint untuk mendapatkan daftar acara dari Google Calendar pengguna.
+
+#### **Response Example**
+```json
+{
+  "status": "success",
+  "data": [
+    {
+      "id": "event_id",
+      "summary": "Workout Session",
+      "start": {
+        "dateTime": "2023-10-01T10:00:00",
+        "timeZone": "Asia/Jakarta"
+      },
+      "end": {
+        "dateTime": "2023-10-01T11:00:00",
+        "timeZone": "Asia/Jakarta"
+      }
+    }
+  ]
+}
+```
+
+---
+
+### 4. **Gemini Chatbot**
+- **URL**: `http://localhost:3000/chatbot`
+- **Method**: `POST`
+- **Description**: Endpoint untuk berinteraksi dengan Chatbot Gemini. Chatbot ini mampu menjawab pertanyaan dan memberikan saran yang relevan sesuai dengan kebutuhan pengguna.
+
+#### **Request Example**
 ```json
 {
   "message": "Apa tips olahraga untuk pemula?"
@@ -23,7 +150,6 @@ WorkoutAtHome API menyediakan berbagai layanan untuk mendukung aplikasi kesehata
 ```
 
 #### **Response Example**
-
 ```json
 {
   "status": "success",
@@ -35,89 +161,30 @@ WorkoutAtHome API menyediakan berbagai layanan untuk mendukung aplikasi kesehata
 
 ---
 
-### 2. **Google OAuth**
-
-- **URL**: `http://localhost:3000/auth/google`
-- **Method**: `GET`
-- **Description**: Endpoint untuk autentikasi menggunakan akun Google. Setelah login, Anda akan menerima token autentikasi untuk mengakses API lainnya.
-
-#### **Usage**
-1. Arahkan pengguna ke URL ini untuk login menggunakan Google.
-2. Setelah login berhasil, pengguna akan diarahkan kembali ke aplikasi Anda dengan token akses.
-
----
-
-### 3. **Calculator Calories**
-
-- **URL**: `http://localhost:3000/calculator/calories`
-- **Method**: `POST`
-- **Description**: Endpoint untuk menghitung kebutuhan kalori, protein, dan gula harian berdasarkan data pengguna seperti berat badan, tingkat aktivitas, dan tujuan diet. Juga disertakan rekomendasi makanan dari Gemini AI.
-
-#### **Request Parameters**
-
-| Parameter       | Type   | Description                                                                 |
-|------------------|--------|-----------------------------------------------------------------------------|
-| `weight`        | Number | Berat badan pengguna dalam kilogram.                                       |
-| `activityLevel` | String | Tingkat aktivitas: `ringan`, `sedang`, `berat`, `atlet`.                  |
-| `dietGoal`      | String | Tujuan diet: `turunkan berat badan`, `naikkan berat badan`, `menaikkan massa otot`, `mempertahankan berat badan`. |
-
-#### **Request Example**
-
-```json
-{
-  "weight": 70,
-  "activityLevel": "sedang",
-  "dietGoal": "menaikkan massa otot"
-}
-```
-
-#### **Response Example**
-
-```json
-{
-  "status": "success",
-  "data": {
-    "calories": 2450,
-    "protein": 112,
-    "sugar": 61,
-    "foodRecommendations": "Sarapan: Oatmeal dengan pisang dan madu... (lanjutan)"
-  }
-}
-```
-
----
-
 ## **Setup and Run**
 
-### **1. Install Dependencies**
-Jalankan perintah berikut untuk menginstal dependensi:
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-```bash
-npm install
-```
+2. **Create `.env` File**
+   Tambahkan konfigurasi berikut ke dalam file `.env`:
+   ```
+   GEMINI_API_KEY=your-gemini-api-key
+   GOOGLE_CLIENT_ID=your-google-client-id
+   GOOGLE_CLIENT_SECRET=your-google-client-secret
+   ```
 
-### **2. Create .env File**
-Tambahkan konfigurasi berikut ke dalam file `.env`:
-
-```
-GEMINI_API_KEY=your-gemini-api-key
-GOOGLE_CLIENT_ID=your-google-client-id
-GOOGLE_CLIENT_SECRET=your-google-client-secret
-```
-
-### **3. Run Server**
-Jalankan server dengan perintah berikut:
-
-```bash
-npm start
-```
+3. **Run Server**
+   ```bash
+   npm start
+   ```
 
 ---
 
 ## **Error Handling**
-
 Semua endpoint API akan mengembalikan respons dengan format berikut jika terjadi kesalahan:
-
 ```json
 {
   "status": "fail",
@@ -127,7 +194,5 @@ Semua endpoint API akan mengembalikan respons dengan format berikut jika terjadi
 
 ---
 
-## **Selamat menggunakan API WorkoutAtHome! 🚀**
+**Selamat menggunakan API WorkoutAtHome! 🚀**
 ```
-
-README.md ini sudah terstruktur dengan baik, memuat semua informasi yang dibutuhkan, dan siap digunakan untuk dokumentasi. 🚀
