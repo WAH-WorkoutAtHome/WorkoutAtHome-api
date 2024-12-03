@@ -8,7 +8,7 @@ const configureGoogleAuth = async (server) => {
     password: "cookie_encryption_password_secure",
     clientId: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    isSecure: false,
+    isSecure: process.env.AUTH_SECURE === "true",
     location: process.env.AUTHORIZATION_URL,
   });
 
