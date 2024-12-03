@@ -11,7 +11,7 @@ const configureGoogleAuth = async (server) => {
     clientId: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     isSecure: false,
-    location: server.info.uri,
+    location: process.env.AUTHORIZATION_URL,
   });
 
   console.log("Google OAuth strategy configured");
