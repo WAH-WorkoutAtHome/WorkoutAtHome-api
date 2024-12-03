@@ -1,6 +1,4 @@
-Berikut adalah README.md yang sudah dirapikan untuk dokumentasi program Anda:
-
-# **WorkoutAtHome API Documentation**
+### **WorkoutAtHome API Documentation**
 
 ## **Overview**
 
