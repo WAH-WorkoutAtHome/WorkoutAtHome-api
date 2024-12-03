@@ -22,10 +22,8 @@ const routes = [
         const code = request.query.code;
         if (!code) throw new Error("Authorization code not found");
 
-        // Retrieve tokens using the authorization code
         const tokens = await getAccessToken(code);
 
-        // Redirect to frontend with the access token in the URL hash
         return h.redirect(
           `${process.env.APP_URL}#/kalendar?access_token=${tokens.access_token}`
         );

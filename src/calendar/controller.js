@@ -5,48 +5,41 @@ const {
 } = require("./service");
 const workoutPlans = require("./workoutPlans");
 
-// Fungsi untuk mengenerate jadwal selama 7 hari
 function generateSchedule(target, startDate) {
   if (!workoutPlans[target]) {
-    throw new Error("Invalid target"); // Validasi target
+    throw new Error("Invalid target");
   }
 
-  const startDateObj = new Date(startDate); // Konversi tanggal awal
+  const startDateObj = new Date(startDate);
   return workoutPlans[target].map((workout, index) => {
-    const workoutDate = new Date(startDateObj); // Tanggal awal
-    workoutDate.setDate(workoutDate.getDate() + index); // Tambah hari sesuai indeks
+    const workoutDate = new Date(startDateObj);
+    workoutDate.setDate(workoutDate.getDate() + index);
 
     return {
-      date: workoutDate.toISOString().split("T")[0], // Format tanggal
+      date: workoutDate.toISOString().split("T")[0],
       title: workout.title,
       activities: workout.activities,
     };
   });
 }
 
-// Handler utama untuk route
 async function generateCalendar(req, h) {
   try {
     const { target, startDate, googleAuth } = req.payload;
 
-    // Validasi input dari pengguna
     if (!target || !startDate || !googleAuth) {
       throw new Error("Target, startDate, and googleAuth are required");
     }
 
-    // Generate jadwal latihan selama 1 minggu
     const schedule = generateSchedule(target, startDate);
 
-    // Autentikasi Google OAuth2
     const authClient = getOAuthClient(googleAuth);
 
-    // Tambahkan jadwal ke Google Calendar
     const calendarResponse = await addEventsToGoogleCalendar(
       authClient,
       schedule
     );
 
-    // Tambahkan jadwal ke Google Tasks
     const tasksResponse = await addTasksToGoogleTasks(authClient, schedule);
 
     return h

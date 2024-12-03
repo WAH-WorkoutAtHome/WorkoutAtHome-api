@@ -8,7 +8,6 @@ const calorieCalculatorRoutes = [
       const { weight, activityLevel, dietGoal } = request.payload;
 
       try {
-        // Panggil fungsi perhitungan kalori
         const result = await calculateCalories(weight, activityLevel, dietGoal);
 
         return h

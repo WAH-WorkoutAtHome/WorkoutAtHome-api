@@ -12,32 +12,25 @@ const init = async () => {
     host: process.env.HOST,
     routes: {
       cors: {
-        origin: ["*"], // Atur domain spesifik jika memungkinkan
+        origin: ["*"],
       },
     },
   });
 
-  // Konfigurasi Google OAuth
   await configureGoogleAuth(server);
 
-  // Tambahkan route Google OAuth
   server.route(googleAuthRoutes);
 
-  // Tambahkan route Chatbot
   server.route(chatBotRoutes);
 
-  // Tambahkan rute kalkulator kalori
   server.route(calorieCalculatorRoutes);
 
-  // Tambahkan rute kalender
   server.route(calendarRoutes);
 
-  // Jalankan server
   await server.start();
   console.log(`Server running on ${server.info.uri}`);
 };
 
-// Tangani error global
 process.on("unhandledRejection", (err) => {
   console.error(err);
   process.exit(1);

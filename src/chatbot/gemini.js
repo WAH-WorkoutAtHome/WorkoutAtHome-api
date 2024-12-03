@@ -13,7 +13,6 @@ const generateChatResponse = async (prompt) => {
     const result = await model.generateContent(prompt);
     const text = result.response.text();
 
-    // Konversi markdown menjadi HTML
     const converter = new showdown.Converter();
     const textHtml = converter.makeHtml(text);
 
