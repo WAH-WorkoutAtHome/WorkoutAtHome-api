@@ -68,13 +68,21 @@ async function addEventsToGoogleCalendar(authClient, schedule) {
           calendarId: "primary",
           resource: {
             summary: workout.title,
-            description: workout.activities.join(", "),
+            description: workout.activities
+              .map(
+                (activity) =>
+                  `<h3>${activity.name}</h3>` +
+                  `<p><strong>Deskripsi:</strong> ${activity.description}</p>` +
+                  `<p><strong>Repetisi/Durasi:</strong> ${activity.repetitions || activity.duration}</p>` +
+                  `<p><strong>Video:</strong> <a href="${activity.videoUrl}">Tonton di sini</a>`
+              )
+              .join("<br><br>"),
             start: {
-              dateTime: new Date(workout.date + "T09:00:00"),
+              dateTime: new Date(workout.date + "T04:30:00"),
               timeZone: "Asia/Jakarta",
             },
             end: {
-              dateTime: new Date(workout.date + "T10:00:00"),
+              dateTime: new Date(workout.date + "T22:00:00"),
               timeZone: "Asia/Jakarta",
             },
           },
@@ -97,9 +105,9 @@ async function addTasksToGoogleTasks(authClient, schedule) {
         tasks.tasks.insert({
           tasklist: "@default",
           requestBody: {
-            title: workout.title,
-            notes: workout.activities.join(", "),
-            due: new Date(workout.date + "T23:59:59").toISOString(),
+            title: `Lakukan ${workout.title}`,
+            notes: `Pengingat untuk melakukan: ${workout.title} pada hari ini.`,
+            due: new Date(workout.date).toISOString(), // Set as all day
           },
         })
       )

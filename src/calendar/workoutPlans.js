@@ -4,116 +4,273 @@ const workoutPlans = {
       day: 1,
       title: "Upper Body & Cardio",
       activities: [
-        "Push-Ups (20 repetisi, 3 set): Latihan untuk menguatkan otot dada, bahu, dan trisep.",
-        "Jumping Jacks (3 menit, 3 set): Latihan kardio untuk membakar kalori dan meningkatkan detak jantung.",
+        {
+          name: "Push-Ups",
+          description: "Latihan untuk menguatkan otot dada, bahu, dan trisep.",
+          repetitions: "20 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=IODxDxX7oi4",
+        },
+        {
+          name: "Jumping Jacks",
+          description:
+            "Latihan kardio untuk membakar kalori dan meningkatkan detak jantung.",
+          duration: "3 menit, 3 set",
+          videoUrl: "https://www.youtube.com/shorts/lWMw6uppiFc",
+        },
       ],
     },
     {
       day: 2,
       title: "Lower Body",
       activities: [
-        "Bodyweight Squats (15 repetisi, 3 set): Latihan untuk menguatkan otot paha, bokong, dan otot bawah tubuh.",
-        "Lunges (15 repetisi per kaki, 3 set): Latihan untuk menguatkan paha depan dan bokong.",
+        {
+          name: "Bodyweight Squats",
+          description:
+            "Latihan untuk menguatkan otot paha, bokong, dan otot bawah tubuh.",
+          repetitions: "15 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=m0GcZ24pK6k",
+        },
+        {
+          name: "Lunges",
+          description: "Latihan untuk menguatkan paha depan dan bokong.",
+          repetitions: "15 repetisi per kaki, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=tTej-ax9XiA",
+        },
       ],
     },
     {
       day: 3,
       title: "HIIT Training",
       activities: [
-        "Mountain Climbers (30 detik, 3 set): Latihan kardio untuk membakar lemak dengan gerakan cepat.",
-        "Burpees (12 repetisi, 3 set): Latihan penuh tubuh untuk meningkatkan kekuatan dan daya tahan.",
+        {
+          name: "Mountain Climbers",
+          description:
+            "Latihan kardio untuk membakar lemak dengan gerakan cepat.",
+          duration: "30 detik, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=kLh-uczlPLg",
+        },
+        {
+          name: "Burpees",
+          description:
+            "Latihan penuh tubuh untuk meningkatkan kekuatan dan daya tahan.",
+          repetitions: "12 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=auBLPXO8Fww",
+        },
       ],
     },
     {
       day: 4,
       title: "Stretch & Cardio",
       activities: [
-        "Yoga Session (20 menit): Latihan fleksibilitas untuk relaksasi dan perbaikan postur tubuh.",
-        "Jogging (15 menit): Latihan kardio untuk meningkatkan stamina dan membakar kalori.",
+        {
+          name: "Yoga Session",
+          description:
+            "Latihan fleksibilitas untuk relaksasi dan perbaikan postur tubuh.",
+          duration: "20 menit",
+          videoUrl: "https://www.youtube.com/watch?v=FLFNI5PM2PM",
+        },
+        {
+          name: "Jogging",
+          description:
+            "Latihan kardio untuk meningkatkan stamina dan membakar kalori.",
+          duration: "15 menit",
+          videoUrl: "https://www.youtube.com/shorts/cn3Ra2QiULc",
+        },
       ],
     },
     {
       day: 5,
       title: "Rest Day",
       activities: [
-        "Light Walking (20 menit): Berjalan santai untuk pemulihan tubuh dan memperbaiki sirkulasi darah.",
-        "Full Body Stretch (10 menit): Peregangan seluruh tubuh untuk meningkatkan kelenturan.",
+        {
+          name: "Light Walking",
+          description:
+            "Berjalan santai untuk pemulihan tubuh dan memperbaiki sirkulasi darah.",
+          duration: "20 menit",
+          videoUrl: "https://www.youtube.com/watch?v=2fOd_oMYkF0",
+        },
+        {
+          name: "Full Body Stretch",
+          description:
+            "Peregangan seluruh tubuh untuk meningkatkan kelenturan.",
+          duration: "12 menit",
+          videoUrl: "https://www.youtube.com/watch?v=itJE4neqDJw",
+        },
       ],
     },
     {
       day: 6,
       title: "Core & Cardio",
       activities: [
-        "Plank Variations (1 menit setiap variasi, 3 set): Latihan inti untuk memperkuat otot perut dan punggung bawah.",
-        "Jump Rope (2 menit, 4 set): Latihan kardio untuk meningkatkan kebugaran dan koordinasi.",
+        {
+          name: "Plank Variations",
+          description:
+            "Latihan inti untuk memperkuat otot perut dan punggung bawah.",
+          duration: "1 menit setiap variasi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=k9w2LJAZ1iY",
+        },
+        {
+          name: "Jump Rope",
+          description:
+            "Latihan kardio untuk meningkatkan kebugaran dan koordinasi.",
+          duration: "2 menit, 4 set",
+          videoUrl: "https://www.youtube.com/watch?v=kDOGb9C5kp0",
+        },
       ],
     },
     {
       day: 7,
       title: "Full Body Burn",
       activities: [
-        "Squats (20 repetisi, 3 set): Latihan untuk paha dan bokong.",
-        "Push-Ups (15 repetisi, 3 set): Latihan untuk dada dan bahu.",
-        "Burpees (10 repetisi, 3 set): Latihan penuh tubuh untuk pembakaran kalori maksimal.",
+        {
+          name: "Squats",
+          description: "Latihan untuk paha dan bokong.",
+          repetitions: "20 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=zWXToSCaq-Q",
+        },
+        {
+          name: "Push-Ups",
+          description: "Latihan untuk menguatkan otot dada, bahu, dan trisep.",
+          repetitions: "20 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=IODxDxX7oi4",
+        },
       ],
     },
   ],
 
-  weight_gain: [
+  core_strength: [
     {
       day: 1,
-      title: "Upper Body Strength",
+      title: "Core Foundations",
       activities: [
-        "Push-Ups (12 repetisi, 3 set): Latihan dasar untuk kekuatan otot dada.",
-        "Pike Push-Ups (10 repetisi, 3 set): Variasi push-up untuk melatih otot bahu.",
+        {
+          name: "Plank",
+          description:
+            "Latihan dasar untuk mengaktifkan otot perut dan punggung bawah.",
+          duration: "30 detik, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=pSHjTRCQxIw",
+        },
+        {
+          name: "Side Plank",
+          description:
+            "Latihan untuk melatih stabilitas dan otot samping perut.",
+          duration: "30 detik per sisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=wqzrb67Dwf8",
+        },
       ],
     },
     {
       day: 2,
-      title: "Lower Body Strength",
+      title: "Dynamic Core",
       activities: [
-        "Lunges (10 repetisi per kaki, 3 set): Latihan penguatan paha dan bokong.",
-        "Glute Bridges (15 repetisi, 3 set): Latihan untuk menguatkan bokong dan otot punggung bawah.",
+        {
+          name: "Mountain Climbers",
+          description:
+            "Latihan dinamis untuk menguatkan otot perut dan kardio.",
+          duration: "1 menit, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=nmwgirgXLYM",
+        },
+        {
+          name: "Bicycle Crunches",
+          description:
+            "Latihan untuk melatih otot perut bagian bawah dan atas.",
+          repetitions: "20 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=9FGilxCbdz8",
+        },
       ],
     },
     {
       day: 3,
-      title: "Core Activation",
+      title: "Core Strength & Balance",
       activities: [
-        "Plank (1 menit, 3 set): Latihan untuk memperkuat otot inti dan stabilitas tubuh.",
-        "Sit-Ups (15 repetisi, 3 set): Latihan perut untuk memperkuat otot perut bagian atas.",
+        {
+          name: "Bird Dog",
+          description:
+            "Latihan stabilitas untuk memperkuat otot inti dan koordinasi tubuh.",
+          repetitions: "12 repetisi per sisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=wiFNA3sqjCA",
+        },
+        {
+          name: "Dead Bug",
+          description:
+            "Latihan untuk melatih kontrol inti dan mencegah cedera punggung.",
+          repetitions: "12 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=MCVX9wRd_h0",
+        },
       ],
     },
     {
       day: 4,
-      title: "Active Recovery",
+      title: "Rest Day",
       activities: [
-        "Yoga Flow (15 menit): Latihan pemulihan dengan pernapasan dalam dan peregangan tubuh.",
-        "Walking (20 menit): Aktivitas ringan untuk meningkatkan sirkulasi darah dan pemulihan tubuh.",
+        {
+          name: "Yoga Flow",
+          description:
+            "Peregangan lembut untuk meningkatkan fleksibilitas dan relaksasi.",
+          duration: "20 menit",
+          videoUrl: "https://www.youtube.com/watch?v=v7AYKMP6rOE",
+        },
+        {
+          name: "Light Walking",
+          description: "Berjalan santai untuk pemulihan dan sirkulasi darah.",
+          duration: "15 menit",
+          videoUrl: "https://www.youtube.com/watch?v=2fOd_oMYkF0",
+        },
       ],
     },
     {
       day: 5,
-      title: "Full Body Circuit",
+      title: "Core Burn",
       activities: [
-        "Bodyweight Squats (15 repetisi, 3 set): Latihan untuk penguatan tubuh bagian bawah.",
-        "Push-Ups (10 repetisi, 3 set): Latihan dada dan trisep.",
+        {
+          name: "Russian Twists (tanpa beban)",
+          description: "Latihan rotasi untuk melatih otot perut oblique.",
+          repetitions: "20 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=wkD8rjkodUI",
+        },
+        {
+          name: "Leg Raises",
+          description: "Latihan untuk memperkuat otot perut bagian bawah.",
+          repetitions: "15 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=JB2oyawG9KI",
+        },
       ],
     },
     {
       day: 6,
-      title: "Cardio Light",
+      title: "Intense Core Challenge",
       activities: [
-        "Jogging (15 menit): Latihan kardio ringan untuk membakar lemak tanpa tekanan berlebih.",
-        "Stretching (10 menit): Peregangan untuk meningkatkan fleksibilitas tubuh.",
+        {
+          name: "Plank with Shoulder Taps",
+          description:
+            "Latihan intens untuk melatih keseimbangan dan stabilitas inti.",
+          repetitions: "12 repetisi per sisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=gKA5LBy7WAI",
+        },
+        {
+          name: "Reverse Crunches",
+          description: "Latihan untuk memperkuat perut bagian bawah.",
+          repetitions: "15 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=XY8KzdDcMFg",
+        },
       ],
     },
     {
       day: 7,
-      title: "Rest Day",
+      title: "Active Recovery",
       activities: [
-        "Meditation (10 menit): Latihan pernapasan untuk meredakan stres dan meningkatkan fokus.",
-        "Full Body Stretch (20 menit): Peregangan untuk seluruh tubuh untuk membantu pemulihan otot.",
+        {
+          name: "Foam Rolling (jika tersedia) atau Peregangan Lembut",
+          description: "Relaksasi dan peregangan untuk pemulihan tubuh.",
+          duration: "15 menit",
+          videoUrl: "https://www.youtube.com/watch?v=X8P9KSaYOkE",
+        },
+        {
+          name: "Full Body Stretch",
+          description: "Peregangan seluruh tubuh untuk menjaga kelenturan.",
+          duration: "20 menit",
+          videoUrl: "https://www.youtube.com/watch?v=y87vSUoIMGU",
+        },
       ],
     },
   ],
@@ -121,59 +278,133 @@ const workoutPlans = {
   muscle_building: [
     {
       day: 1,
-      title: "Upper Body Build",
+      title: "Chest & Triceps",
       activities: [
-        "Push-Ups (12 repetisi, 4 set): Latihan untuk kekuatan dada dan lengan.",
-        "Plank Shoulder Taps (15 repetisi, 3 set): Latihan untuk stabilitas bahu dan otot inti.",
+        {
+          name: "Push-Ups",
+          description: "Latihan dasar untuk menguatkan otot dada dan trisep.",
+          repetitions: "12-15 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=IODxDxX7oi4",
+        },
+        {
+          name: "Tricep Dips (using a chair)",
+          description: "Latihan untuk melatih otot trisep.",
+          repetitions: "12 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=0326dy_-CzM",
+        },
       ],
     },
     {
       day: 2,
-      title: "Lower Body Build",
+      title: "Back & Biceps",
       activities: [
-        "Bulgarian Split Squats (12 repetisi per kaki, 3 set): Latihan untuk penguatan paha dan bokong.",
-        "Calf Raises (20 repetisi, 3 set): Latihan untuk memperkuat betis.",
+        {
+          name: "Superman Exercise",
+          description: "Latihan untuk menguatkan otot punggung bawah.",
+          duration: "30 detik tahan, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=z6PJMT2y8GQ",
+        },
+        {
+          name: "Reverse Tabletop Pulls",
+          description:
+            "Latihan untuk melatih punggung atas dan otot biceps menggunakan berat tubuh.",
+          repetitions: "8-10 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=yzvpOWmqpdg",
+        },
       ],
     },
     {
       day: 3,
-      title: "Core Strength",
+      title: "Legs & Shoulders",
       activities: [
-        "Russian Twists (20 repetisi, 3 set): Latihan untuk memperkuat otot perut bagian samping.",
-        "Leg Raises (15 repetisi, 3 set): Latihan untuk menguatkan otot perut bagian bawah.",
+        {
+          name: "Bodyweight Squats",
+          description: "Latihan untuk menguatkan otot paha, bokong, dan betis.",
+          repetitions: "12-15 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=aclHkVaku9U",
+        },
+        {
+          name: "Pike Push-Ups",
+          description:
+            "Latihan untuk melatih otot bahu dan trisep menggunakan berat tubuh.",
+          repetitions: "10-12 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=XckEEwa1BPI",
+        },
       ],
     },
     {
       day: 4,
-      title: "Cardio Recovery",
+      title: "Rest Day",
       activities: [
-        "Jogging (20 menit): Latihan kardio ringan untuk pemulihan.",
-        "Dynamic Stretching (10 menit): Peregangan dinamis untuk meningkatkan fleksibilitas.",
+        {
+          name: "Yoga Flow",
+          description: "Peregangan untuk relaksasi dan pemulihan otot.",
+          duration: "15-20 menit",
+          videoUrl: "https://www.youtube.com/watch?v=v7AYKMP6rOE",
+        },
+        {
+          name: "Breathing Exercises",
+          description:
+            "Latihan pernapasan untuk meningkatkan fokus dan relaksasi.",
+          duration: "10 menit",
+          videoUrl: "https://www.youtube.com/watch?v=tybOi4hjZFQ",
+        },
       ],
     },
     {
       day: 5,
-      title: "Full Body Strength",
+      title: "Core & Cardio",
       activities: [
-        "Bodyweight Squats (15 repetisi, 3 set): Latihan untuk paha dan bokong.",
-        "Push-Ups (12 repetisi, 3 set): Latihan dada dan trisep.",
+        {
+          name: "Plank Variations",
+          description:
+            "Latihan inti untuk memperkuat otot perut dan stabilitas.",
+          duration: "45 detik setiap variasi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=k9w2LJAZ1iY",
+        },
+        {
+          name: "High Knees",
+          description:
+            "Latihan kardio intens untuk meningkatkan kekuatan dan daya tahan.",
+          duration: "1 menit, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=sTvekaq6vOU",
+        },
       ],
     },
     {
       day: 6,
-      title: "Active Recovery",
+      title: "Full Body Burn",
       activities: [
-        "Yoga Flow (20 menit): Latihan pernapasan dan peregangan untuk pemulihan otot.",
-        "Walking (20 menit): Berjalan kaki untuk meningkatkan sirkulasi darah.",
+        {
+          name: "Burpees",
+          description: "Latihan seluruh tubuh untuk kekuatan dan daya tahan.",
+          repetitions: "8-10 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=TU8QYVW0gDU",
+        },
+        {
+          name: "Wall Sit",
+          description: "Latihan untuk melatih kekuatan otot paha dan bokong.",
+          duration: "30-40 detik, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=SszDMOZvFuw",
+        },
       ],
     },
     {
       day: 7,
-      title: "Full Body Blast",
+      title: "Active Recovery",
       activities: [
-        "Jump Squats (10 repetisi, 3 set): Latihan untuk kekuatan kaki dan bokong.",
-        "Burpees (8 repetisi, 3 set): Latihan penuh tubuh untuk pembakaran kalori maksimal.",
-        "Side Plank (30 detik per sisi, 3 set): Latihan untuk kekuatan inti dan stabilitas tubuh.",
+        {
+          name: "Light Walking or Stretching",
+          description: "Pemulihan ringan untuk meningkatkan fleksibilitas.",
+          duration: "15-20 menit",
+          videoUrl: "https://www.youtube.com/watch?v=vVxpEvcEYNM",
+        },
+        {
+          name: "Foam Rolling (optional)",
+          description: "Relaksasi otot untuk mencegah kekakuan.",
+          duration: "10-15 menit",
+          videoUrl: "https://www.youtube.com/watch?v=KWGsSq0J1Bk",
+        },
       ],
     },
   ],
@@ -181,59 +412,133 @@ const workoutPlans = {
   maintenance: [
     {
       day: 1,
-      title: "Cardio & Light Strength",
+      title: "Upper Body",
       activities: [
-        "Jogging in Place (20 menit): Latihan kardio ringan untuk membakar kalori.",
-        "Bodyweight Squats (15 repetisi, 3 set): Latihan untuk otot paha dan bokong.",
+        {
+          name: "Push-Ups",
+          description: "Latihan untuk menguatkan otot dada, bahu, dan trisep.",
+          repetitions: "15 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=IODxDxX7oi4",
+        },
+        {
+          name: "Wall Push-Ups",
+          description: "Alternatif push-up untuk intensitas ringan.",
+          repetitions: "12 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=5NPvv40gd3Q",
+        },
       ],
     },
     {
       day: 2,
-      title: "Upper Body & Core",
+      title: "Lower Body",
       activities: [
-        "Push-Ups (10 repetisi, 3 set): Latihan untuk dada, bahu, dan trisep.",
-        "Plank (30 detik, 3 set): Latihan inti untuk kekuatan perut dan punggung.",
+        {
+          name: "Bodyweight Squats",
+          description: "Latihan untuk menguatkan otot paha dan bokong.",
+          repetitions: "12 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=m0GcZ24pK6k",
+        },
+        {
+          name: "Step-Ups",
+          description: "Latihan ringan untuk menguatkan kaki dan keseimbangan.",
+          repetitions: "12 repetisi per kaki, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=elhu-WC1qk4",
+        },
       ],
     },
     {
       day: 3,
-      title: "Flexibility",
+      title: "Core & Stability",
       activities: [
-        "Yoga Session (20 menit): Latihan untuk kelenturan dan relaksasi.",
-        "Dynamic Stretching (10 menit): Peregangan dinamis untuk meningkatkan mobilitas.",
+        {
+          name: "Plank",
+          description: "Latihan untuk memperkuat otot inti dan punggung bawah.",
+          duration: "30 detik, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=pSHjTRCQxIw",
+        },
+        {
+          name: "Bird Dog",
+          description: "Latihan stabilitas ringan untuk tubuh bagian inti.",
+          repetitions: "12 repetisi per sisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=wiFNA3sqjCA",
+        },
       ],
     },
     {
       day: 4,
-      title: "Active Recovery",
+      title: "Rest & Recovery",
       activities: [
-        "Walking (20 menit): Berjalan kaki untuk pemulihan ringan.",
-        "Meditation (10 menit): Latihan pernapasan untuk meredakan stres.",
+        {
+          name: "Light Yoga",
+          description:
+            "Sesi yoga ringan untuk meningkatkan fleksibilitas dan relaksasi.",
+          duration: "10 menit",
+          videoUrl: "https://www.youtube.com/watch?v=VaoV1PrYft4",
+        },
+        {
+          name: "Foam Rolling",
+          description:
+            "Peregangan dan pelepasan otot untuk mengurangi ketegangan.",
+          duration: "10 menit",
+          videoUrl: "https://www.youtube.com/watch?v=X8P9KSaYOkE",
+        },
       ],
     },
     {
       day: 5,
-      title: "Full Body Circuit",
+      title: "Full Body Light Workout",
       activities: [
-        "Squats (15 repetisi, 3 set): Latihan tubuh bagian bawah.",
-        "Push-Ups (12 repetisi, 3 set): Latihan dada dan trisep.",
-        "Plank (30 detik, 3 set): Latihan untuk kekuatan inti.",
+        {
+          name: "Chair Dips",
+          description: "Latihan ringan untuk menguatkan otot trisep.",
+          repetitions: "10 repetisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=0326dy_-CzM",
+        },
+        {
+          name: "Side Lunges",
+          description:
+            "Latihan ringan untuk mengaktifkan otot kaki dan bokong.",
+          repetitions: "10 repetisi per sisi, 3 set",
+          videoUrl: "https://www.youtube.com/watch?v=zejTuBTEkfY",
+        },
       ],
     },
     {
       day: 6,
-      title: "Cardio Light",
+      title: "Cardio & Recovery",
       activities: [
-        "Jogging (15 menit): Latihan ringan untuk pemulihan.",
-        "Stretching (10 menit): Peregangan untuk pemulihan otot.",
+        {
+          name: "Brisk Walking",
+          description:
+            "Berjalan cepat untuk meningkatkan sirkulasi dan kebugaran.",
+          duration: "20 menit",
+          videoUrl: "https://www.youtube.com/shorts/_Y_FTROkP-U",
+        },
+        {
+          name: "Dynamic Stretches",
+          description: "Peregangan aktif untuk kelenturan dan kesiapan tubuh.",
+          duration: "20 menit",
+          videoUrl: "https://www.youtube.com/watch?v=TUY857PPkjU",
+        },
       ],
     },
     {
       day: 7,
-      title: "Rest Day",
+      title: "Active Recovery",
       activities: [
-        "Full Body Stretch (20 menit): Peregangan untuk seluruh tubuh untuk pemulihan otot.",
-        "Meditation (10 menit): Latihan pernapasan untuk relaksasi dan pemulihan mental.",
+        {
+          name: "Light Stretching",
+          description:
+            "Peregangan ringan untuk memperbaiki mobilitas dan mengurangi ketegangan.",
+          duration: "10 menit",
+          videoUrl: "https://www.youtube.com/watch?v=lNPaDikuRhU",
+        },
+        {
+          name: "Meditation",
+          description: "Sesi meditasi untuk menenangkan pikiran dan tubuh.",
+          duration: "10 menit",
+          videoUrl: "https://www.youtube.com/watch?v=z0GtmPnqAd8",
+        },
       ],
     },
   ],
